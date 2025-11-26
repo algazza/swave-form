@@ -52,7 +52,7 @@ const totalPrice = computed(() => {
 </script>
 
 <template>
-  <form :action="urlAction" @submit="onSubmit">
+  <form :action="urlAction" @submit="onSubmit" target="hidden_iframe">
     <div v-for="variant in variantPrice" class="mb-4">
       <div class="flex justify-between items-center">
         <h1 class="text-2xl">{{ variant.name }}</h1>
