@@ -3,8 +3,7 @@ import { useLocalStorage } from '@vueuse/core';
 import Form from './components/Form.vue';
 import { logo } from './lib/constanta';
 import SuccessForm from './components/SuccessForm.vue';
-// const isNewCheckout = useLocalStorage<boolean>("isNew", true);
-const isNewCheckout = false;
+const isNewCheckout = useLocalStorage<boolean>("isNew", true);
 
 </script>
 

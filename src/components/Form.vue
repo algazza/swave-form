@@ -15,8 +15,10 @@ import {
 } from "@/components/ui/select";
 import { Button } from "./ui/button";
 import { computed } from "vue";
+import { useLocalStorage } from "@vueuse/core";
 
 const urlAction = import.meta.env.VITE_API_FORM;
+const isNewCheckout = useLocalStorage<boolean>('isNew', true)
 const validationSchema = toTypedSchema(FormSchema);
 
 const { handleSubmit, errors, values } = useForm({
@@ -28,6 +30,8 @@ const onSubmit = handleSubmit((values, ctx) => {
 
   const form = ctx.evt?.target as HTMLFormElement;
   form.submit();
+
+  isNewCheckout.value = false
 });
 
 const formatRupiah = (price: number) => {
