@@ -26,8 +26,6 @@ const { handleSubmit, errors, values } = useForm({
 });
 
 const onSubmit = handleSubmit((values, ctx) => {
-  console.log(values);
-
   const form = ctx.evt?.target as HTMLFormElement;
   form.submit();
 
